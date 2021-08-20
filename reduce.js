@@ -6,10 +6,11 @@ Examples:
     extractValue(arr,'name') // ['Elie', 'Tim', 'Matt', 'Colt']
 */
 
-function extractValue(arr, key) {
-    return arr.reduce((accum,nextValue)=>{
-        return accum[`${key}`]+ nextValue[`${key}`]
-    })
+function extractValue(arr, key){
+    return arr.reduce(function(acc,next){
+        acc.push(next[key]);
+        return acc;
+    },[]);
 }
 
 /*
